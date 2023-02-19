@@ -1,0 +1,26 @@
+{
+  "name": "juste",
+  "version": "0.1.0",
+  "description": "An Opinionated Markdown Formatter",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "type": "module",
+  "keywords": [
+    "markdown",
+    "prettier",
+    "beautifier",
+    "formatter",
+    "linter"
+  ],
+  "author": "Wes Vetter <wes.vetter@gmail.com> (https://wesvetter.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "10.2.0"
+  },
+  "dependencies": {
+    "remark-parse": "10.0.1",
+    "unified": "10.1.2"
+  }
+}
