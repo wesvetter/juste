@@ -23,6 +23,36 @@ const goodListBullets =
 *   Oranges
 `
 
+
+const badNestedBullets =
+`## Some Items
+
+- Elit sit omnis voluptatum quia a. Iure eveniet totam magni.
+  - Dolor aliquam illum sunt magni quis? Distinctio officia dicta quasi
+    - Elit hic nesciunt quisquam tenetur quisquam. Perspiciatis assumenda rem facere?
+  - Elit repellat atque animi temporibus elit Consequatur explicabo ratione laboriosam.
+- Amet recusandae consequatur sunt quasi dolor itaque excepturi Deleniti dignissimos.
+  - Amet praesentium inventore accusamus dolores nobis porro libero consequatur. Vitae?
+    - Ipsum vel corporis cupiditate libero totam est? Cumque fuga a
+    - Dolor doloribus quo minus reiciendis aliquam sunt eveniet quo ea!
+  - Consectetur corrupti facere rerum facilis recusandae id Quo eos animi!
+`
+
+const goodNestedBullets =
+`## Some Items
+
+*   Elit sit omnis voluptatum quia a. Iure eveniet totam magni.
+    -   Dolor aliquam illum sunt magni quis? Distinctio officia dicta quasi
+        *   Elit hic nesciunt quisquam tenetur quisquam. Perspiciatis assumenda rem facere?
+    -   Elit repellat atque animi temporibus elit Consequatur explicabo ratione laboriosam.
+*   Amet recusandae consequatur sunt quasi dolor itaque excepturi Deleniti dignissimos.
+    -   Amet praesentium inventore accusamus dolores nobis porro libero consequatur. Vitae?
+        *   Ipsum vel corporis cupiditate libero totam est? Cumque fuga a
+        *   Dolor doloribus quo minus reiciendis aliquam sunt eveniet quo ea!
+    -   Consectetur corrupti facere rerum facilis recusandae id Quo eos animi!
+`
+
+
 const badItalics =
 `I *love* candy corn.
 `
@@ -106,6 +136,10 @@ describe('process()', function () {
   describe('unordered lists', function () {
     it('converts dashes to bullets (asterisks)', function () {
       assert.equal(process(badListBullets).result, goodListBullets);
+    });
+
+    it('alternates list bullets', function () {
+      assert.equal(process(badNestedBullets).result, goodNestedBullets);
     });
   });
 
